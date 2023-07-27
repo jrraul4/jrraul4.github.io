@@ -1,3 +1,4 @@
+ /*Menu Window*/ 
 const openBtn = document.querySelector('#openBtn');
 const closeBtn = document.querySelector('#close');
 const linkNavPort = document.querySelector('#linkNav-port');
@@ -18,3 +19,6 @@ openBtn.addEventListener('click', openWindow);
 linkNavPort.addEventListener('click', closeWindow);
 linkNavAbout.addEventListener('click', closeWindow);
 linkNavCont.addEventListener('click', closeWindow);
+
+/* Projects Section/Generate Cards */
+
