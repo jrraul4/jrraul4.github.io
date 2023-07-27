@@ -33,4 +33,15 @@ const projects = [
     liveLink: 'https://jrraul4.github.io',
     source: 'https://github.com/jrraul4/jrraul4.github.io',
   },
+
+  {
+    name: 'Profesional Art Printing Data',
+    img: 'img/project-background-normal.png',
+    imgPosition: '',
+    shortDescription: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.",
+    technologies: ['HTML', 'Ruby', 'Bootstrap'],
+    liveLink: 'https://jrraul4.github.io',
+    source: 'https://github.com/jrraul4/jrraul4.github.io',
+  },
 ];
