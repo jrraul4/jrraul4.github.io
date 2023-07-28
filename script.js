@@ -101,16 +101,57 @@ const projects = [
   },
 ];
 
-const cardsContainer = document.getElementById('Portfolio');
+const cardsContainer = document.querySelector('#Portfolio');
 
-let project = projects[index];
-let projectName = project.name;
-let projectOther = project.other;
-let projectDescription = project.shortDescription;
-let projectImage = project.img;
-let projectImagePosition = project.imgPosition;
-let projectLiveLink = project.liveLink;
-let projectSource = project.source;
+function popUpAppear (index) {
+  const mainProject = document.createElement('div');
+  mainProject.classList.add('main-project');
+
+  const cardContent = document.createElement('div');
+  cardContent.classList.add('cardContent');
+  // let project = projects[index];
+  // let projectName = project.name;
+  // let projectDescription = project.shortDescription;
+  // let projectImage = project.img;
+  // let projectLiveLink = project.liveLink;
+  // let projectSource = project.source;
+  // let projectTech = project.technologies;
+  cardContent.innerHTML = `
+  <h3>${projects[i].name}</h3>
+  <p>${projectDescription}</p>
+  <ul class="project-features">
+    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
+  </ul>
+  <div class='rhgfhgbn'>
+    <button class="button-projects">See Project</button>
+  </div>
+  
+  `;
+  mainProject.appendChild('cardContent');
+  cardsContainer.appendChild('mainProject');
+
+  const button = cardContent.querySelector('rhgfhgbn');
+  const closeButton = button.querySelector('button-projects');
+
+  closeButton.addEventListener('click', () => {
+    mainProject.style.display = 'none';
+    cardsContainer.removeChild('mainProject');
+  });
+
+  window.addEventListener('click',(ev) => {
+    if (ev.target === mainProject){
+      mainProject.style.display = 'none';
+      cardsContainer.removeChild('mainProject');
+    }
+  })
+
+
+
+  
+
+};
+
+
 
 for (let i = 1; i <= projects.length; i += 1) {
 const cardContent = `
