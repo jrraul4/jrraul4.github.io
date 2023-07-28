@@ -104,6 +104,8 @@ const projects = [
 const cardsContainer = document.querySelector('#Portfolio');
 
 function popUpAppear (index) {
+
+  //Cambiar las clases por unas nuevas
   const mainProject = document.createElement('div');
   mainProject.classList.add('main-project');
 
@@ -131,7 +133,7 @@ function popUpAppear (index) {
   cardsContainer.appendChild('mainProject');
 
   const button = cardContent.querySelector('rhgfhgbn');
-  const closeButton = button.querySelector('button-projects');
+  const closeButton = button.querySelector('zzzzzzzzzzz');
 
   closeButton.addEventListener('click', () => {
     mainProject.style.display = 'none';
@@ -145,29 +147,94 @@ function popUpAppear (index) {
     }
   })
 
+};
 
+function createProjects (projects, index){
+   //Mantener clases originales del CSS
+  const variable1DeLaFuncion = document.createElement('div');
+  variable1DeLaFuncion.add('xxxxxx');
 
-  
+  const variable2DeLaFuncion= document.createElement('div');
+  variable2DeLaFuncion.add('yyyyyy');
+  variable2DeLaFuncion.add('yyyyyyyyy');
+  // let project = projects[index];
+  // let projectName = project.name;
+  // let projectDescription = project.shortDescription;
+  // let projectImage = project.img;
+  // let projectLiveLink = project.liveLink;
+  // let projectSource = project.source;
+  // let projectTech = project.technologies;
+  variable2DeLaFuncion.innerHTML = `
+  <h3>${projects[i].name}</h3>
+  <p>${projectDescription}</p>
+  <ul class="project-features">
+    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
+  </ul>
+  <div class='rhgfhgbn'>
+    <button class="button-projects">See Project</button>
+  </div>
+  `;
+  variable1DeLaFuncion.appendChild(variable2DeLaFuncion)
+
+  const ButtonProjects = variable2DeLaFuncion.querySelector('button-projects');
+  ButtonProjects.addEventListener('click', () => {
+    popUpAppear(index);
+  })
 
 };
 
-
-
-for (let i = 1; i <= projects.length; i += 1) {
-const cardContent = `
-  <div class="projects${project.imgPosition}">
-    <div class="project-background-normal">
-      <img src="${project.img}" alt="Project number ${i} image">
-    </div>
-    <div class="project-features">
-      <h2>${project.name}</h2>
-      <p class="projects p">${project.shortDescription}</p>
-      <ul class="features">
-        ${project.technologies.map((element) => `<li><a>${element}</a></li>`).join('')}
-      </ul>
-      <button class="button-projects projectButtons">See Project</button>
-    </div>
-  </div>
-`;
-cardsContainer.innerHTML += cardContent;
+for(let i = 1; i < projects.length; i += 1) {
+  const card = createProjects(projects[i], i);
+  cardsContainer.appendChild(card);
 }
+
+const mainProject = document.createElement('div');
+  mainProject.classList.add('main-project');
+
+  const cardContent = document.createElement('div');
+  cardContent.classList.add('cardContent');
+
+  cardContent.innerHTML = `
+  <h3>${projects[0].name}</h3>
+  <p>${projectDescription}</p>
+  <ul class="project-features">
+    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
+  </ul>
+  <div class='rhgfhgbn'>
+    <button class="button-projects">See Project</button>
+  </div>
+  
+  `;
+
+  const ButtonProjects = variable2DeLaFuncion.querySelector('button-projects');
+  ButtonProjects.addEventListener('click', () => {
+    popUpAppear([0]);
+  })
+
+
+
+
+
+
+
+
+
+
+// for (let i = 1; i <= projects.length; i += 1) {
+// const cardContent = `
+//   <div class="projects${project.imgPosition}">
+//     <div class="project-background-normal">
+//       <img src="${project.img}" alt="Project number ${i} image">
+//     </div>
+//     <div class="project-features">
+//       <h2>${project.name}</h2>
+//       <p class="projects p">${project.shortDescription}</p>
+//       <ul class="features">
+//         ${project.technologies.map((element) => `<li><a>${element}</a></li>`).join('')}
+//       </ul>
+//       <button class="button-projects projectButtons">See Project</button>
+//     </div>
+//   </div>
+// `;
+// cardsContainer.innerHTML += cardContent;
+// }
