@@ -110,9 +110,23 @@ N/A
 
 👤 José De La Rosa
 
-- GitHub: [@githubhandle](https://github.com/jrraul4)
-- Twitter: [@twitterhandle](https://twitter.com/joserauldelaro1)
+- GitHub: [@jrraul4](https://github.com/jrraul4)
+- Twitter: [@joserauldelaro1](https://twitter.com/joserauldelaro1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jose-raul-de-la-rosa-98aa70265/)
+
+- 👤 **Vivek Raj**
+
+- GitHub: [@githubhandle](https://github.com/VivekRaaZ?tab=repositories)
+- Twitter: [@twitterhandle](https://twitter.com/BossVivekRaj)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/vivek-raj-a78b92256/)
+
+- 👤 **IsaMarvin**
+- GitHub: [IsaMarvin](https://github.com/IsaMarvin)
+- LinkedIn: [IsaMarvin](https://www.linkedin.com/in/isamarvin/)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
