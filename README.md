@@ -110,8 +110,8 @@ N/A
 
 👤 José De La Rosa
 
-- GitHub: [@githubhandle](https://github.com/jrraul4)
-- Twitter: [@twitterhandle](https://twitter.com/joserauldelaro1)
+- GitHub: [@jrraul4](https://github.com/jrraul4)
+- Twitter: [@joserauldelaro1](https://twitter.com/joserauldelaro1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jose-raul-de-la-rosa-98aa70265/)
 
 ## 🔭 Future Features <a name="future-features"></a>
