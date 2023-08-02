@@ -22,3 +22,4 @@ linkNavCont.addEventListener('click', closeWindow);
 
 /* Contact validation */
 const form = document.getElementById('contact-form');
+const email = document.getElementById('email');
