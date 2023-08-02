@@ -474,6 +474,16 @@ li {
   width: 300px;
 }
 
+small {
+  color: rgba(145, 18, 18, 0.844);
+  align-self: flex-start;
+  visibility: hidden;
+}
+
+.displayError {
+  visibility: visible;
+}
+
 @keyframes width {
   to {
     width: 50%;

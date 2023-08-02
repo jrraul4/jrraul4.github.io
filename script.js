@@ -21,3 +21,26 @@ linkNavAbout.addEventListener('click', closeWindow);
 linkNavCont.addEventListener('click', closeWindow);
 
 /* Contact validation */
+
+const form = document.getElementById('contact-form');
+const email = document.getElementById('email');
+const small = document.getElementById('small');
+
+function checkInput() {
+  const emailValue = email.value.trim();
+
+  if (emailValue !== emailValue.toLowerCase()) {
+    small.classList.add('displayError');
+    return false;
+  }
+
+  small.classList.remove('displayError');
+  return true;
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (checkInput()) {
+    form.submit();
+  }
+});
