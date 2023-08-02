@@ -21,16 +21,38 @@ linkNavAbout.addEventListener('click', closeWindow);
 linkNavCont.addEventListener('click', closeWindow);
 
 /* Projects Section/Generate Cards */
+
+const cardsContent = `
+<section class="work-section" id="Portfolio">
+<h2>My Recent Works</h2>
+<div class="separator"></div>
+
+<div class="main-project">
+  <div class='cardContent'>
+    <div id="main-project-img"><img src="img/main-project-img.png" alt="Project image"></div>
+    <div class="main-project-content">
+      <h3>Multi-Post Stories</h3>
+      <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.</p>
+      <ul class="main-project-features">
+        <li class="features-main"><a>CSS</a></li>
+        <li class="features-main"><a>HTML</a></li>
+        <li class="features-main"><a>Bootstrap</a></li>
+        <li class="features-main"><a>Ruby</a></li>
+      </ul>
+      <button class="button-main-project">See Project</button>
+    </div>
+  </div> 
+</div> 
+`;
+
+const insertCardsContent = () => {
+  const container = document.querySelector('.work-section');
+
+  container.innerHTML = cardsContent;
+};
+
+insertcardsContent();
 const projects = [
-  {
-    name: 'My Recent Works',
-    other: 'Multi-Post Stories',
-    img: 'img/main-project-img.png',
-    shortDescription: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
-    technologies: ['CSS', 'HTML', 'Ruby', 'Bootstrap'],
-    liveLink: 'https://jrraul4.github.io',
-    source: 'https://github.com/jrraul4/jrraul4.github.io',
-  },
 
   {
     name: 'Profesional Art Printing Data',
@@ -87,115 +109,68 @@ const projects = [
   },
 ];
 
-const cardsContainer = document.querySelector('#Portfolio');
+const cardsContainer = document.querySelector('.projects');
 
-function popUpAppear (index) {
-
-  //Cambiar las clases por unas nuevas
-  const mainProject = document.createElement('div');
-  mainProject.classList.add('main-project');
-
-  const cardContent = document.createElement('div');
-  cardContent.classList.add('cardContent');
-
-  let project = projects[index];
-  let projectName = project.name;
-  let projectDescription = project.shortDescription;
-  let projectImage = project.img;
-  let projectLiveLink = project.liveLink;
-  let projectSource = project.source;
-  let projectTech = project.technologies;
-
-  cardContent.innerHTML = `
-  <h3>${project.name}</h3>
-  <p>${projectDescription}</p>
-  <ul class="project-features">
-    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
-  </ul>
-  <div class='rhgfhgbn'>
-    <button class="button-projects">See Project</button>
+const cardsHTML = cards.map((project) => `
+  <div class = .projects>
+    <h2 class=".projects h3">${project.name}</h2>
+    <p class=".projects p">${project.shortDescription}</p>
+    <img class="img-feature" src="${project.img}" alt="${project.name}">
+    <ul class="main-project-features">
+      ${project.technologies.map((technology) => `<li>${technology}</li>`).join('')}
+    </ul>
+    <a class="links" href="${project.liveLink}" target="_blank">Ver proyecto</a>
+    <a class="links" href="${project.source}" target="_blank">Ver código fuente</a>
+    <button class="button-projects">See project</button>
   </div>
-  `;
+`).join('');
 
-  mainProject.appendChild('cardContent');
-  cardsContainer.appendChild('mainProject');
+cardsContainer.innerHTML = cardsHTML;
 
-  const button = cardContent.querySelector('rhgfhgbn');
-  const closeButton = button.querySelector('zzzzzzzzzzz');
+const body = document.querySelector('body');
+const openModal = document.querySelectorAll('.button-projects');
+openModal.forEach((button) => {
+  button.addEventListener('click', () => {
+    const popSection = document.createElement('div');
+    const popUp = document.createElement('div');
+    popUp.innerHTML = `
+    <section class="eachWork" >
+    <div class="eachWork_Content">
+      <div class="content2">
+        <h2 class="subtitle-pop1">Multi Post Stories</h2>
+        <h2 class="subtitle-pop2">Keeping track of hundreds  of components website</h2>
+        <img onclick="closePopup(); "class="close-button" src="img/close.png" alt="">
+        <ul class="tecnologies"> 
+          <li>HTML</li>
+          <li>Bootstrap</li>
+          <li>Ruby on Rails</li>
+        </ul>
 
-  closeButton.addEventListener('click', () => {
-    mainProject.style.display = 'none';
-    cardsContainer.removeChild('mainProject');
+        <div class="description">
+          <div class="eachWorkImgContent">
+            <img class ="eachWorkImg" src="img/Snapshoot Portfolio.png" alt="" srcset="">
+          </div>
+          <div class="container_inf_button">
+            <p class="description-p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essent</p>
+            <p class="description-p2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s.<br><br>
+
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releax map lapora verita.</p>
+            <div class="containerEachWorkButton">
+              <a href="https://jrraul4.github.io/" target="_blank"><button id="liveBtn" class="liveBtn">See live<img src="img/Icon-see live.png"></button></a>
+              <a href="https://github.com/jrraul4" target="_blank"><button id="sourceBtn">See source<img src="img/Vector.png"></button></a>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+          `;
+    popSection.appendChild(popUp);
+    body.appendChild(popSection);
+    const popCloseButton = popSection.querySelector('.close-button');
+    popCloseButton.addEventListener('click', () => {
+      popSection.remove();
+    });
   });
-
-  window.addEventListener('click',(ev) => {
-    if (ev.target === mainProject){
-      mainProject.style.display = 'none';
-      cardsContainer.removeChild('mainProject');
-    }
-  })
-
-};
-
-function createProjects (projects, index){
-   //Mantener clases originales del CSS
-  const variable1DeLaFuncion = document.createElement('div');
-  variable1DeLaFuncion.add('xxxxxx');
-
-  const variable2DeLaFuncion= document.createElement('div');
-  variable2DeLaFuncion.add('yyyyyy');
-  variable2DeLaFuncion.add('yyyyyyyyy');
-  let project = projects[index];
-  let projectName = project.name;
-  let projectDescription = project.shortDescription;
-  let projectImage = project.img;
-  let projectLiveLink = project.liveLink;
-  let projectSource = project.source;
-  let projectTech = project.technologies;
-
-  variable2DeLaFuncion.innerHTML = `
-  <h3>${projects[i].name}</h3>
-  <p>${projectDescription}</p>
-  <ul class="project-features">
-    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
-  </ul>
-  <div class='rhgfhgbn'>
-    <button class="button-projects">See Project</button>
-  </div>
-  `;
-
-  variable1DeLaFuncion.appendChild(variable2DeLaFuncion)
-  const ButtonProjects = variable2DeLaFuncion.querySelector('button-projects');
-  ButtonProjects.addEventListener('click', () => {
-    popUpAppear(index);
-  })
-
-};
-
-for(let i = 1; i < projects.length; i += 1) {
-  const card = createProjects(projects[i], i);
-  cardsContainer.appendChild(card);
-}
-
-const mainProject = document.createElement('div');
-  mainProject.classList.add('main-project');
-
-  const cardContent = document.createElement('div');
-  cardContent.classList.add('cardContent');
-
-  cardContent.innerHTML = `
-  <h3>${projects[0].name}</h3>
-  <p>${projectDescription}</p>
-  <ul class="project-features">
-    ${projectTech.map((element) => `<li>${element}</li>`).join('')}
-  </ul>
-  <div class='rhgfhgbn'>
-    <button class="button-projects">See Project</button>
-  </div>
-  `;
-
-  const ButtonProjects = variable2DeLaFuncion.querySelector('button-projects');
-  ButtonProjects.addEventListener('click', () => {
-    popUpAppear([0]);
-  })
+});
 
