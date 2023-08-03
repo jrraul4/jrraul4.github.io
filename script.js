@@ -46,3 +46,4 @@ form.addEventListener('submit', (e) => {
 });
 
 /* Preserve Form Data */
+const nameForm = document.getElementById('fullname');
