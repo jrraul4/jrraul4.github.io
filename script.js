@@ -46,4 +46,26 @@ form.addEventListener('submit', (e) => {
 });
 
 /* Preserve Form Data */
+
 const nameForm = document.getElementById('fullname');
+const commentForm = document.getElementById('comment');
+
+form.addEventListener('submit', () => {
+  const name = nameForm.value;
+  const comment = commentForm.value;
+  const emailaddress = email.value;
+
+  localStorage.setItem('name', name);
+  localStorage.setItem('email', emailaddress);
+  localStorage.setItem('comment', comment);
+});
+
+window.addEventListener('load', () => {
+  const savedName = localStorage.getItem('name');
+  const savedEmail = localStorage.getItem('email');
+  const savedComment = localStorage.getItem('comment');
+
+  nameForm.value = savedName;
+  email.value = savedEmail;
+  commentForm.value = savedComment;
+});
